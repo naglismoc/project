@@ -1,0 +1,37 @@
+.container{
+margin: 10px;
+}
+
+
+.size-landscape{
+   width: 100px;
+   height: 50px; 
+}
+
+.size-portrait{
+   width: 50px;
+   height: 100px; 
+}
+
+.yellow{
+    background-color: yellow;
+}
+.green{
+    background-color: green;
+}
+.red{
+    background-color: red;
+}
+.border{
+    border: solid 1px black;
+}
+
+.inline{
+    display: inline-block;
+}
+.innerBox{
+    height: 25px;
+    width: 25px;
+    background-color: blueviolet;
+    margin: 8px;
+}
