@@ -38,22 +38,22 @@
         <input type="radio" name="parking" id="end">
         <br>
 
-        <select name="seats" id="">
+        <select name="seats" id="seats">
             <option value="1">vienvietė</option>
             <option value="2">dvivietė</option>
             <option value="3">trivietė</option>
         </select>
 
 
-        <input type="time" name="" id="">
+        <input type="time" name="time" id="time">
         <br>
-        <input type="date" name="" id="">
+        <input type="date" name="date" id="date">
         <br>
-        <input type="datetime-local" name="DATE" id="">
+        <input type="datetime-local" name="datetime-local" id="datetime-local">
         <br>
-        <input type="month" name="" id="">
+        <input type="month" name="month" id="month">
         <br>
-        <input type="week" name="" id="">
+        <input type="week" name="week" id="week">
         <br>
         <br>
 
@@ -65,7 +65,6 @@
         <button type="submit">touch me!</button>
     </form>
     <div id="result"></div>
-
     <script>
         document.getElementById("form").addEventListener("submit", function (e) {
             e.preventDefault(); // Prevent form submission
@@ -73,8 +72,36 @@
             // Get the form values
             let name = document.getElementById("name").value;
             let age = document.getElementById("age").value;
+            let search = document.getElementById("search").value;
+            let password = document.getElementById("password").value;
+            let email = document.getElementById("email").value;
+            let sleepInBed = document.getElementById("sleepInBed").checked;
+            let haveMeal = document.getElementById("HaveMeal").checked;
+            let parking = document.querySelector('input[name="parking"]:checked') ? document.querySelector('input[name="parking"]:checked').value : '';
+            let seats = document.getElementById("seats").value;
+            let time = document.getElementById("time").value;
+            let date = document.getElementById("date").value;
+            let datetime = document.getElementById("datetime-local").value;
+            let month = document.getElementById("month").value;
+            let week = document.getElementById("week").value;
 
-            document.getElementById("result").innerHTML = "Name: " + name + "<br>Age: " + age;
+            // Display the form values
+            document.getElementById("result").innerHTML = `
+                Name: ${name}<br>
+                Age: ${age}<br>
+                Search: ${search}<br>
+                Password: ${password}<br>
+                Email: ${email}<br>
+                Sleep in Bed: ${sleepInBed ? 'Yes' : 'No'}<br>
+                Have Meal: ${haveMeal ? 'Yes' : 'No'}<br>
+                Parking: ${parking}<br>
+                Seats: ${seats}<br>
+                Time: ${time}<br>
+                Date: ${date}<br>
+                Datetime: ${datetime}<br>
+                Month: ${month}<br>
+                Week: ${week}<br>
+            `;
         });
     </script>
 </body>
