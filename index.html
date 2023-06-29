@@ -28,14 +28,14 @@
         <input type="checkbox" name="" id="HaveMeal">
         <br>
 
-        <label for="start">plaukimo pradzioje</label>
-        <input type="radio" name="parking" id="start">
+        <label for="start">Parkuosimes plaukimo pradzioje</label>
+        <input type="radio" name="parking" value="start" id="start">
         <br>
         <label for="mid">plaukimo viduryje</label>
-        <input type="radio" name="parking" id="mid">
+        <input type="radio" name="parking" value="mid" id="mid">
         <br>
         <label for="end">plaukimo pabaigoje</label>
-        <input type="radio" name="parking" id="end">
+        <input type="radio" name="parking" value="end" id="end">
         <br>
 
         <select name="seats" id="seats">
@@ -59,19 +59,39 @@
         <input type="reset" name="reset" id="reset">
         <button type="submit">touch me!</button>
     </form>
+    <label for="name-result">Name:</label>
     <p id="name-result"></p>
+    <label for="age-result">Age:</label>
     <p id="age-result"></p>
+    <label for="search-result">Search:</label>
     <p id="search-result"></p>
+    <label for="password-result">Password:</label>
     <p id="password-result"></p>
+    <label for="email-result">Email:</label>
     <p id="email-result"></p>
+    <label for="sleepInBed-result">Sleep in Bed:</label>
     <p id="sleepInBed-result"></p>
+    <label for="HaveMeal-result">Have Meal:</label>
     <p id="HaveMeal-result"></p>
-    <p id="parking-result"></p>
+    <hr>
+    <label for="parking-result-start">Parking start:</label>
+    <p id="parking-result-start"></p>
+    <label for="parking-result-mid">Parking mid:</label>
+    <p id="parking-result-mid"></p>
+    <label for="parking-result-end">Parking end:</label>
+    <p id="parking-result-end"></p>
+    <hr>
+    <label for="seats-result">Seats:</label>
     <p id="seats-result"></p>
+    <label for="time-result">Time:</label>
     <p id="time-result"></p>
+    <label for="date-result">Date:</label>
     <p id="date-result"></p>
+    <label for="datetime-local-result">Datetime:</label>
     <p id="datetime-local-result"></p>
+    <label for="month-result">Month:</label>
     <p id="month-result"></p>
+    <label for="week-result">Week:</label>
     <p id="week-result"></p>
 
     <script>
@@ -87,6 +107,7 @@
             let sleepInBed = document.getElementById("sleepInBed").checked;
             let haveMeal = document.getElementById("HaveMeal").checked;
             let parking = document.querySelector('input[name="parking"]:checked') ? document.querySelector('input[name="parking"]:checked').value : '';
+
             let seats = document.getElementById("seats").value;
             let time = document.getElementById("time").value;
             let date = document.getElementById("date").value;
@@ -95,20 +116,22 @@
             let week = document.getElementById("week").value;
 
             // Display the form values in the respective <p> tags
-            document.getElementById("name-result").textContent = `Name: ${name}`;
-            document.getElementById("age-result").textContent = `Age: ${age}`;
-            document.getElementById("search-result").textContent = `Search: ${search}`;
-            document.getElementById("password-result").textContent = `Password: ${password}`;
-            document.getElementById("email-result").textContent = `Email: ${email}`;
-            document.getElementById("sleepInBed-result").textContent = `Sleep in Bed: ${sleepInBed ? 'Yes' : 'No'}`;
-            document.getElementById("HaveMeal-result").textContent = `Have Meal: ${haveMeal ? 'Yes' : 'No'}`;
-            document.getElementById("parking-result").textContent = `Parking: ${parking}`;
-            document.getElementById("seats-result").textContent = `Seats: ${seats}`;
-            document.getElementById("time-result").textContent = `Time: ${time}`;
-            document.getElementById("date-result").textContent = `Date: ${date}`;
-            document.getElementById("datetime-local-result").textContent = `Datetime: ${datetime}`;
-            document.getElementById("month-result").textContent = `Month: ${month}`;
-            document.getElementById("week-result").textContent = `Week: ${week}`;
+            document.getElementById("name-result").textContent = name;
+            document.getElementById("age-result").textContent = age;
+            document.getElementById("search-result").textContent = search;
+            document.getElementById("password-result").textContent = password;
+            document.getElementById("email-result").textContent = email;
+            document.getElementById("sleepInBed-result").textContent = sleepInBed ? 'Yes' : 'No';
+            document.getElementById("HaveMeal-result").textContent = haveMeal ? 'Yes' : 'No';
+            document.getElementById("parking-result-start").textContent = parking === 'start' ? 'Yes' : 'No';
+            document.getElementById("parking-result-mid").textContent = parking === 'mid' ? 'Yes' : 'No';
+            document.getElementById("parking-result-end").textContent = parking === 'end' ? 'Yes' : 'No';
+            document.getElementById("seats-result").textContent = seats;
+            document.getElementById("time-result").textContent = time;
+            document.getElementById("date-result").textContent = date;
+            document.getElementById("datetime-local-result").textContent = datetime;
+            document.getElementById("month-result").textContent = month;
+            document.getElementById("week-result").textContent = week;
         });
     </script>
 </body>
