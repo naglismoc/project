@@ -1,28 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./main.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <title>Document</title>
 </head>
 
 <body>
-    <div class="container">
-        <div class="size-landscape yellow border"></div>
-        <div class="size-landscape green border"></div>
-        <div class="size-landscape red border"></div>
-    </div>
-    <div class="container">
-        <div class="size-portrait yellow border inline">
-            <div class="innerBox"></div>
-            <div class="innerBox"></div>
-            <div class="innerBox"></div>
-        </div>
-        <div class="size-portrait green border inline"></div>
-        <div class="size-portrait red border inline"></div>
-    </div>
-    
-</body>  
+    <form action="" id="form" method="get">
+        <label for="">paieška</label> 
+        <input type="search" name="search" id="search">
+        <br>
+        <br>
+        <input type="text" id="name" name="name" placeholder="name">
+        <input type="password" id="password" name="password" placeholder="password">
+        <input type="email" name="email" id="email" placeholder="email">
+        <input type="number" id="age" name="age" placeholder="age">
+        <br>
+
+        <label for="">Kur miegosim?</label>
+        <input type="checkbox" name="" id="sleepInBed">
+        <br>
+        <label for="">Ar valgysim?</label>
+        <input type="checkbox" name="" id="HaveMeal">
+        <br>
+
+        <label for="start">plaukimo pradzioje</label>
+        <input type="radio" name="parking" id="start">
+        <br>
+        <label for="mid">plaukimo viduryje</label>
+        <input type="radio" name="parking" id="mid">
+        <br>
+        <label for="end">plaukimo pabaigoje</label>
+        <input type="radio" name="parking" id="end">
+        <br>
+
+        <select name="seats" id="">
+            <option value="1">vienvietė</option>
+            <option value="2">dvivietė</option>
+            <option value="3">trivietė</option>
+        </select>
+
+
+        <input type="time" name="" id="">
+        <br>
+        <input type="date" name="" id="">
+        <br>
+        <input type="datetime-local" name="DATE" id="">
+        <br>
+        <input type="month" name="" id="">
+        <br>
+        <input type="week" name="" id="">
+        <br>
+        <br>
+
+        <!-- <input type="file" name="" id=""> -->
+        <!-- <input type="range" name="" id=""> -->
+        <!-- <input type="color" name="" id=""> -->
+        
+        <input type="reset" name="reset" id="reset">
+        <button type="submit">touch me!</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById("form").addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent form submission
+
+            // Get the form values
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+
+            document.getElementById("result").innerHTML = "Name: " + name + "<br>Age: " + age;
+        });
+    </script>
+</body>
+
 </html>
