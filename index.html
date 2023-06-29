@@ -11,7 +11,7 @@
 
 <body>
     <form action="" id="form" method="get">
-        <label for="">paieška</label> 
+        <label for="">paieška</label>
         <input type="search" name="search" id="search">
         <br>
         <br>
@@ -44,7 +44,6 @@
             <option value="3">trivietė</option>
         </select>
 
-
         <input type="time" name="time" id="time">
         <br>
         <input type="date" name="date" id="date">
@@ -57,14 +56,24 @@
         <br>
         <br>
 
-        <!-- <input type="file" name="" id=""> -->
-        <!-- <input type="range" name="" id=""> -->
-        <!-- <input type="color" name="" id=""> -->
-        
         <input type="reset" name="reset" id="reset">
         <button type="submit">touch me!</button>
     </form>
-    <div id="result"></div>
+    <p id="name-result"></p>
+    <p id="age-result"></p>
+    <p id="search-result"></p>
+    <p id="password-result"></p>
+    <p id="email-result"></p>
+    <p id="sleepInBed-result"></p>
+    <p id="HaveMeal-result"></p>
+    <p id="parking-result"></p>
+    <p id="seats-result"></p>
+    <p id="time-result"></p>
+    <p id="date-result"></p>
+    <p id="datetime-local-result"></p>
+    <p id="month-result"></p>
+    <p id="week-result"></p>
+
     <script>
         document.getElementById("form").addEventListener("submit", function (e) {
             e.preventDefault(); // Prevent form submission
@@ -85,23 +94,21 @@
             let month = document.getElementById("month").value;
             let week = document.getElementById("week").value;
 
-            // Display the form values
-            document.getElementById("result").innerHTML = `
-                Name: ${name}<br>
-                Age: ${age}<br>
-                Search: ${search}<br>
-                Password: ${password}<br>
-                Email: ${email}<br>
-                Sleep in Bed: ${sleepInBed ? 'Yes' : 'No'}<br>
-                Have Meal: ${haveMeal ? 'Yes' : 'No'}<br>
-                Parking: ${parking}<br>
-                Seats: ${seats}<br>
-                Time: ${time}<br>
-                Date: ${date}<br>
-                Datetime: ${datetime}<br>
-                Month: ${month}<br>
-                Week: ${week}<br>
-            `;
+            // Display the form values in the respective <p> tags
+            document.getElementById("name-result").textContent = `Name: ${name}`;
+            document.getElementById("age-result").textContent = `Age: ${age}`;
+            document.getElementById("search-result").textContent = `Search: ${search}`;
+            document.getElementById("password-result").textContent = `Password: ${password}`;
+            document.getElementById("email-result").textContent = `Email: ${email}`;
+            document.getElementById("sleepInBed-result").textContent = `Sleep in Bed: ${sleepInBed ? 'Yes' : 'No'}`;
+            document.getElementById("HaveMeal-result").textContent = `Have Meal: ${haveMeal ? 'Yes' : 'No'}`;
+            document.getElementById("parking-result").textContent = `Parking: ${parking}`;
+            document.getElementById("seats-result").textContent = `Seats: ${seats}`;
+            document.getElementById("time-result").textContent = `Time: ${time}`;
+            document.getElementById("date-result").textContent = `Date: ${date}`;
+            document.getElementById("datetime-local-result").textContent = `Datetime: ${datetime}`;
+            document.getElementById("month-result").textContent = `Month: ${month}`;
+            document.getElementById("week-result").textContent = `Week: ${week}`;
         });
     </script>
 </body>
